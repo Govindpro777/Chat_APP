@@ -40,6 +40,14 @@ const server = app.listen(port, () => {
 
 setupSocket(server);
 
+// Testing the server
+app.get("/", (req, res) => {
+	return res.json({
+		success: true,
+		message: "Your server is up and running ...",
+	});
+});
+
 mongoose
   .connect(databaseURL)
   .then(() => {
